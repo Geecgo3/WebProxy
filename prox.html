@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Proxy</title>
+</head>
+<body>
+    <h2>Simple Web Proxy</h2>
+    <input type="text" id="url" placeholder="Enter URL">
+    <button onclick="loadPage()">Go</button>
+    <iframe id="proxyFrame" style="width:100%; height:600px; border:1px solid #000;"></iframe>
+
+    <script>
+        function loadPage() {
+            let inputUrl = document.getElementById("url").value;
+            let proxyUrl = "https://your-proxy-server.com/proxy?url=" + encodeURIComponent(inputUrl);
+            document.getElementById("proxyFrame").src = proxyUrl;
+        }
+    </script>
+</body>
+</html>
