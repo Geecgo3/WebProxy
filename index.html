@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Proxy</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input { width: 60%; padding: 10px; margin: 10px 0; }
+        button { padding: 10px 20px; cursor: pointer; }
+        iframe { width: 100%; height: 600px; border: 1px solid #ccc; }
+    </style>
 </head>
 <body>
     <h2>Simple Web Proxy</h2>
-    <input type="text" id="url" placeholder="Enter URL">
+    <input type="text" id="url" placeholder="Enter URL to browse">
     <button onclick="loadPage()">Go</button>
-    <iframe id="proxyFrame" style="width:100%; height:600px; border:1px solid #000;"></iframe>
+    <iframe id="proxyFrame"></iframe>
 
     <script>
         function loadPage() {
             let inputUrl = document.getElementById("url").value;
-            let proxyUrl = "https://your-proxy-server.com/proxy?url=" + encodeURIComponent(inputUrl);
+            let proxyUrl = "https://your-proxy-server.onrender.com/proxy?url=" + encodeURIComponent(inputUrl);
             document.getElementById("proxyFrame").src = proxyUrl;
         }
     </script>
